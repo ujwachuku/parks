@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-
+Ride and package prices
 @endsection
 
 @section('description')
-
+The prices for our rides and packages are affordable and flexible. You can either pay as you use or buy a pre-configured package.
 @endsection
 
 @section('styles')

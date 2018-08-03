@@ -13,11 +13,11 @@
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <link href="/css/animate.css" rel="stylesheet" type="text/css" />
     <link rel="alternate" href="http://funplexng.com" hreflang="en" />
-    <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="shortcut icon" href="/img/favicon.png" />
     @yield('styles')
-    <meta name="description" content="Funplex amusement park is the top recreational center in Lagos, Nigeria. Enjoy amazing rides with friends and family at affordable prices."/>
+    <meta name="description" content="@yield('description')"/>
 
-    <title>Funplex Amusement Park | Amazing rides for friends and family</title>
+    <title>@yield('title') | Funplex Amusement Park</title>
 
 </head>
 
@@ -37,8 +37,8 @@
     <script src="/js/idangerous.swiper.min.js"></script>
     <script src="/js/global.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
-    <script src="js/map.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="/js/map.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
 
     <!-- <script>
 
@@ -109,7 +109,7 @@
 </script> -->
     <script src="/js/subscription.js"></script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5772a25e1fa3a8f9"></script>
+    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5772a25e1fa3a8f9"></script> -->
     @yield('scripts')
 </body>
 

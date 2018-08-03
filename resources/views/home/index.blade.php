@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-
+Amazing rides for friends and family
 @endsection
 
 @section('description')
-
+Funplex amusement park is the top recreational center in Lagos, Nigeria. Enjoy amazing rides with friends and family at affordable prices.
 @endsection
 
 @section('styles')

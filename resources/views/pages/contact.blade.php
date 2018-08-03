@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-
+Contact us
 @endsection
 
 @section('description')
-
+Drop us a line and we will do our best to get back to you as soon as possible
 @endsection
 
 @section('styles')
@@ -71,6 +71,14 @@
 	            </div>
 	         </div>
 	      </div>
+	   </div>
+	</div>
+	<!-- BLOCK "MAP" -->
+	<div>
+	   <div id="map-canvas" data-lat="8.0000" data-lng="10.0000" data-zoom="14">
+	   </div>
+	   <div class="addresses-block">
+	      <a data-lat="6.6130479" data-lng="3.3697542" data-string="Funplex Amusement Park"></a>
 	   </div>
 	</div>
 </div>

@@ -2296,7 +2296,7 @@ blockquote *:before{display: none;}
 
 .author-thumbnail img{width: 39px; height: 39px; display: block;}
 
-.author-text{margin-left: 50px; padding: 12px 0;}
+.author-text{/*margin-left: 50px; */padding: 2px 0;}
 
 .author-text .name{text-transform: uppercase; color: #888;}
 
@@ -4127,7 +4127,7 @@ body {
 }
     
 section {
-  background: #fcfcfc;
+  background: #fff;
   color: #7a90ff;
   padding: 160px 4em 4em;
   min-height: 100vh;
