@@ -14,89 +14,54 @@ The prices for our rides and packages are affordable and flexible. You can eithe
 
 @section('content')
 <div class="blocks-container">
-	<section>
-		<div class="container">
-		    <div class="row page-tagline">
-				<div class="col-md-6 col-md-offset-3">
-			        <h2 class="title">standard packages</h2>
-			    </div>
+	<!-- BLOCK "TYPE 18" -->
+    <div class="new-block type-18 scroll-to-block" data-id="plan-your-visit">
+        <div class="container">
+        	@if(count($packages) > 0)
+            <div class="row page-tagline">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2 class="title">plan your visit</h2>
+                    <div class="description">Funplex Amusement Park hosts numerous outdoor and indoor activities all year round. As you plan to begin your adventure at Funplex, we enjoin you to take a look at our flexible funplex payment packages.</div>
+                </div>
+            </div>
+            <div class="row tabs-switch-container">
+                <div class="tabs-switch-wrapper col-md-12">
+                	@foreach($packages as $package)
+                    <div class="tabs-switch">
+                    	<div class="cell-view">{{ $package->package_name }}</div>
+                    </div>
+                    @endforeach
+                    <div class="clear"></div>
+                </div>
+                <div class="col-md-12">
+                	@foreach($packages as $package)
+                    <div class="row tabs-entry">
+                        <div class="new-block type-8">
+                            <div class="container">
+                                <div class="row">                                    
+                                    <div class="content-entry col-sm-offset-2 col-sm-8">
+                                        <article class="normall">
+                                            <h3 class="tabs-title">{{ $package->package_name }}</h3>
+                                            
+                                            <p>{!! $package->package_description !!}</p>
+                                        </article>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach              
+                </div>
+            </div>
+			@else
+			<div class="row">
+				<div class="alert alert-warning">
+					<p>There are no standard packages at this time.</p>
+				</div>
 			</div>
-		</div>
-	   <div class="pricing pricing-palden">
-	      <div class="pricing-item">
-	         <div class="pricing-deco">
-	            <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
-	               <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-	                  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
-	               <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-	                  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
-	               <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-	                  H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
-	               <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-	                  c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
-	            </svg>
-	            <div class="pricing-price"><span class="pricing-currency">$</span>29
-	               <span class="pricing-period">/ mo</span>
-	            </div>
-	            <h3 class="pricing-title">Freelance</h3>
-	         </div>
-	         <ul class="pricing-feature-list">
-	            <li class="pricing-feature">1 GB of space</li>
-	            <li class="pricing-feature">Support at $25/hour</li>
-	            <li class="pricing-feature">Limited cloud access</li>
-	         </ul>
-	         <button class="pricing-action">Choose plan</button>
-	      </div>
-	      <div class="pricing-item pricing__item--featured">
-	         <div class="pricing-deco">
-	            <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
-	               <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-	                  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
-	               <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-	                  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
-	               <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-	                  H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
-	               <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-	                  c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
-	            </svg>
-	            <div class="pricing-price"><span class="pricing-currency">$</span>59
-	               <span class="pricing-period">/ mo</span>
-	            </div>
-	            <h3 class="pricing-title">Business</h3>
-	         </div>
-	         <ul class="pricing-feature-list">
-	            <li class="pricing-feature">5 GB of space</li>
-	            <li class="pricing-feature">Support at $5/hour</li>
-	            <li class="pricing-feature">Full cloud access</li>
-	         </ul>
-	         <button class="pricing-action">Choose plan</button>
-	      </div>
-	      <div class="pricing-item">
-	         <div class="pricing-deco">
-	            <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
-	               <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-	                  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
-	               <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-	                  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
-	               <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-	                  H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
-	               <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-	                  c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
-	            </svg>
-	            <div class="pricing-price"><span class="pricing-currency">$</span>99
-	               <span class="pricing-period">/ mo</span>
-	            </div>
-	            <h3 class="pricing-title">Enterprise</h3>
-	         </div>
-	         <ul class="pricing-feature-list">
-	            <li class="pricing-feature">10 GB of space</li>
-	            <li class="pricing-feature">Support at $5/hour</li>
-	            <li class="pricing-feature">Full cloud access</li>
-	         </ul>
-	         <button class="pricing-action">Choose plan</button>
-	      </div>
-	   </div>
-	</section>
+			@endif
+        </div>
+    </div>	    
 </div>
 @endsection
 

@@ -39,66 +39,7 @@
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
     <script src="/js/map.js"></script>
     <script src="/js/isotope.pkgd.min.js"></script>
-
-    <!-- <script>
-
-        $(function(){
-
-            $(window).load(function(){
-
-                var $container = $('.sorting-container').isotope({
-
-                    itemSelector: '.sorting-item',
-
-                    masonry: {
-
-                        columnWidth: '.grid-sizer'
-
-                    },
-
-                    getSortData: {
-
-                        category_one: '[data-category_one]',
-
-                        category_two: '[data-category_two]',
-
-                        category_three: '[data-category_three]',
-
-                        category_four: '[data-category_four]',
-
-                        category_five: '[data-category_five]',
-
-                    }
-
-                });
-
-
-
-                $('.sorting-menu a').click(function() {
-
-                    if($(this).hasClass('active')) return false;
-
-                    $(this).parent().find('.active').removeClass('active');
-
-                    $(this).addClass('active');
-
-                    var sortValue = $(this).attr('data-sort-value');
-
-                    $('.sorting-item.disabled').removeClass('disabled');
-
-                    $('.sorting-item[data-'+sortValue+'!="1"]').addClass('disabled');
-
-                    $container.isotope({ sortBy: sortValue });
-
-                    if(sortValue=='original-order') $('.sorting-item.disabled').removeClass('disabled');
-
-                });
-
-            });
-
-        });
-
-    </script> -->
+    
 <!-- <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

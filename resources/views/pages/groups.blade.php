@@ -39,42 +39,32 @@ Family/Group Rates
                               </div>
                               <div class="row">
                                  <div class="col-md-12">
+                                    @if(count($groups) > 0)
                                     <div class="typography-article">
                                        <div class="table-responsive">
-                                          <table class="table">
+                                          <table class="table table-responsive">
                                              <tbody>
                                                 <tr>
                                                    <th>Number of Persons</th>
                                                    <th>Discounted Rate per Person (N)</th>
                                                 </tr>
+                                                @foreach($groups as $group)
                                                 <tr>
-                                                   <td>21-25</td>
-                                                   <td>3,600</td>
+                                                   <td>{{ $group->number_of_persons }}</td>
+                                                   <td>{{ $group->price }}</td>
                                                 </tr>
-                                                <tr>
-                                                   <td>26-30</td>
-                                                   <td>3,400</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>31-40</td>
-                                                   <td>3,300</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>41-50</td>
-                                                   <td>3,200</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>51-100</td>
-                                                   <td>3,100</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>100 and above</td>
-                                                   <td>3,000</td>
-                                                </tr>
+                                                @endforeach                                              
                                              </tbody>
                                           </table>
                                        </div>
                                     </div>
+                                    @else
+                                    <div class="typography-article">
+                                       <div class="alert alert-warning">
+                                          <p>There are no family/group packages at this time.</p>
+                                       </div>
+                                    </div>
+                                    @endif
                                  </div>
                               </div>
                            </div>

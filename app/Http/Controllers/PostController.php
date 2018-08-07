@@ -29,5 +29,14 @@ class PostController extends Controller
 
         return view('blog.post', compact('post', 'categories', 'otherPosts'));
     }
+
+    public function postsByCategory(Category $category)
+    {
+        $categories = Category::all();
+
+        $posts = Category::find($category->id)->posts()->where('status', 'PUBLISHED')->paginate(5);
+
+        return view('blog.index', compact('posts', 'category', 'categories'));
+    }
     
 }

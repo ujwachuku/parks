@@ -20,7 +20,7 @@
             </ul>
          </li>
          <!-- <li><a href="#" class="scroll-to-link">gallery</a></li> -->
-         <li><a href="/news" class="{{ Route::currentRouteName() == 'blog.index' || Route::currentRouteName() == 'blog.post' ? 'act' : '' }}">news</a></li>
+         <li><a href="/news" class="{{ Route::currentRouteName() == 'blog.index' || Route::currentRouteName() == 'blog.post' || Route::currentRouteName() == 'blog.posts.category' ? 'act' : '' }}">news</a></li>
          <li><a href="/contact" class="{{ Route::currentRouteName() == 'pages.contact' ? 'act' : '' }}">contact</a></li>
       </ul>
    </nav>

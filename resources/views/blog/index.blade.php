@@ -18,7 +18,7 @@ Get the latest updates on promos and activities at FUnplex Amusement Park
 <div class="new-block">
    <div class="row page-tagline">
       <div class="col-md-6 col-md-offset-3">
-         <h2 class="title">news</h2>
+         <h2 class="title">{{ !empty($category) ? $category->name : '' }} news</h2>
       </div>
    </div>
    <div class="row">
@@ -30,37 +30,27 @@ Get the latest updates on promos and activities at FUnplex Amusement Park
             <div class="data">
                <div class="date"><span>{{ $post->created_at->day }}</span> {{ $post->created_at->format('M') }} <br/> {{ $post->created_at->year }}</div>
                <div class="text">
-                  <a class="title" href="blog-detail.html">{{ $post->title }}</a>
-                  <div class="description">{!! $post->excerpt !!}</div>
+                  <a class="title" href="/news/{{ $post->slug }}">{{ $post->title }}</a>
+                  <div class="description">{{ $post->excerpt }}</div>
                   <a href="/news/{{ $post->slug }}" class="button size-2"><span>read more</span></a>
                </div>
                <div class="clear"></div>
             </div>
          </div>
          @endforeach
-         {{ $posts->links() }}        
-         <div class="paginator">
-            <ul>
-               <li><a href="blog.html" class="active">1</a></li>
-               <li><a href="blog.html">2</a></li>
-               <li><a href="blog.html">3</a></li>
-               <li><a href="blog.html">4</a></li>
-               <li><a>...</a></li>
-               <li><a href="blog.html">10</a></li>
-            </ul>
-            <div>
-               <a href="blog.html" class="arrow-button"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> Prev Page</a>
-               <a href="blog.html" class="arrow-button">Next Page <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
+                 
+         <div class="pull-right">
+            {{ $posts->links() }}            
+            <div class="clear"></div>
             <div class="clear"></div>
          </div>
-      </div>      
+      </div>     
       <div class="col-md-4 blog-content-column">
          <div class="widget-entry">
             <h3 class="widget-title">Categories</h3>
             <div class="categories-wrapper">
             	@foreach($categories as $category)
-               <a href="#" class="entry"><span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>{{ $category->name }}</a>
+               <a href="{{ route('blog.posts.category', $category->slug) }}" class="entry"><span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>{{ $category->name }}</a>
                @endforeach            
             </div>
          </div>

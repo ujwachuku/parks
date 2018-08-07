@@ -26,42 +26,41 @@ Drop us a line and we will do our best to get back to you as soon as possible
 	      <div class="row">
 	         <div class="col-md-3">
 	            <div class="contact-thumbs">
-	               <img src="img/theme-4/icon7.png" alt="Contact Phone"/>
+	               <img src="/img/theme-4/icon7.png" alt="Contact Phone"/>
 	               <article class="normall">
 	                  <p>
 	                     Tel:
 	                     <br>
-	                     <a href="tel:+2348022242228">+234.802.224.2228</a>
-	                     <a href="tel:+2348179991793">+234.817.999.1793</a> 
+	                     <a href="tel:{{ setting('site.phone') }}">{{ setting('site.phone') }}</a>	                      
 	                  </p>
 	               </article>
 	            </div>
 	            <div class="contact-thumbs">
-	               <img src="img/theme-4/icon8.png" alt="Contact Email"/>
+	               <img src="/img/theme-4/icon8.png" alt="Contact Email"/>
 	               <article class="normall">
 	                  <p>
 	                     Email:
 	                     <br>
-	                     <a href="maito:info@funplexng.com" title="Funplex contact email">info[at]funplexng.com</a>
+	                     <a href="maito:info@funplexng.com" title="Funplex contact email">{{ setting('site.email') }}</a>
 	                  </p>
 	               </article>
 	            </div>
 	         </div>
-	         <div class="col-md-7 col-md-offset-1 wow fadeInRight" data-wow-delay="0.3s">
-	            <form class="contact-form"  method="post">
+	         <div class="col-md-7 col-md-offset-1">
+	         	@if(session('success'))
+	         	<div class="alert alert-success">
+     				<p>{{ session('success') }}</p>
+         		</div>
+         		@endif         	
+	            <form class="contact-form"  action="{{ route('pages.contact.send') }}" method="post">
+	            	@csrf
 	               <input class="required" type="text" placeholder="Your name" value="" name="name" />
 	               <input class="required" type="text" placeholder="Your email" value="" name="email" />
-	               <input type="text" placeholder="Subject" value="" name="subject" />
-	               <select name="department">
-	                  <option value="">Select a Department</option>
-	                  <option value="Support">Customer Care</option>
-	                  <option value="Sales">Marketing and Sales</option>
-	               </select>
-	               <textarea class="required" placeholder="Your message" name="text"></textarea>
+	               <input type="text" placeholder="Subject" value="" name="subject" />	               
+	               <textarea class="required" placeholder="Your message" name="message"></textarea>
 	               <div class="submit-wraper">
 	                  <div class="button">submit message<input type="submit" value="" /></div>
-	               </div>
-	               <input type="hidden" name="mailto" value="info@funplexng.com" style="display: none;" />
+	               </div>	               
 	            </form>
 	         </div>
 	         <div class="form-popup">
@@ -75,7 +74,7 @@ Drop us a line and we will do our best to get back to you as soon as possible
 	</div>
 	<!-- BLOCK "MAP" -->
 	<div>
-	   <div id="map-canvas" data-lat="8.0000" data-lng="10.0000" data-zoom="14">
+	   <div id="map-canvas" data-lat="6.6130479" data-lng="3.3697542" data-zoom="17">
 	   </div>
 	   <div class="addresses-block">
 	      <a data-lat="6.6130479" data-lng="3.3697542" data-string="Funplex Amusement Park"></a>

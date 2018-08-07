@@ -159,7 +159,7 @@ Funplex amusement park is the top recreational center in Lagos, Nigeria. Enjoy a
                 <div data-wow-delay="0.3s" class="col-md-12 wow flipInX">
                     <h2 class="title">Want to have fun in a group?</h2>
                     <div class="description">Visit the park as a group and enjoy fantastic discounts on all rides. It is an opportunity to bond with your friends, family or mates as you create memorable experiences</div>
-                    <a class="button" href="/pricing">learn more</a>
+                    <a class="button" href="/pricing/groups">learn more</a>
                 </div>
             </div>
         </div>
