@@ -23,4 +23,11 @@ class Post extends Model
     {
     	return $this->belongsTo(Category::class);
     }
+
+    public function save(array $options = [])
+    {
+        $this->author_id = auth()->id();
+
+        parent::save();
+    }
 }
