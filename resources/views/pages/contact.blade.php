@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-Contact us
-@endsection
+@section('title') Contact us @endsection
 
 @section('description')
 Drop us a line and we will do our best to get back to you as soon as possible
@@ -31,7 +29,7 @@ Drop us a line and we will do our best to get back to you as soon as possible
 	                  <p>
 	                     Tel:
 	                     <br>
-	                     <a href="tel:{{ setting('site.phone') }}">{{ setting('site.phone') }}</a>	                      
+	                     <a href="tel:{{ setting('site.phone') }}">{{ setting('site.phone') }}</a>
 	                  </p>
 	               </article>
 	            </div>
@@ -51,16 +49,16 @@ Drop us a line and we will do our best to get back to you as soon as possible
 	         	<div class="alert alert-success">
      				<p>{{ session('success') }}</p>
          		</div>
-         		@endif         	
+         		@endif
 	            <form class="contact-form"  action="{{ route('pages.contact.send') }}" method="post">
 	            	@csrf
 	               <input class="required" type="text" placeholder="Your name" value="" name="name" />
 	               <input class="required" type="text" placeholder="Your email" value="" name="email" />
-	               <input type="text" placeholder="Subject" value="" name="subject" />	               
+	               <input type="text" placeholder="Subject" value="" name="subject" />
 	               <textarea class="required" placeholder="Your message" name="message"></textarea>
 	               <div class="submit-wraper">
 	                  <div class="button">submit message<input type="submit" value="" /></div>
-	               </div>	               
+	               </div>
 	            </form>
 	         </div>
 	         <div class="form-popup">
