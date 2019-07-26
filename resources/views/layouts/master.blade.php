@@ -36,7 +36,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/idangerous.swiper.min.js"></script>
     <script src="/js/global.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNOwnBnoZ11MX2jCU_6W-pX4lD0ZJ2QcI&sensor=false&language=en"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ config('app.google.map.api') }}&sensor=false&language=en"></script>
     <script src="/js/map.js"></script>
     <script src="/js/isotope.pkgd.min.js"></script>
 
